@@ -1,0 +1,120 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3782,        111]
+NotebookOptionsPosition[      3414,         93]
+NotebookOutlinePosition[      3774,        109]
+CellTagsIndexPosition[      3731,        106]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"timetoimage", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{"url", ",", "\"\<JSON\>\"", ",", 
+      RowBox[{"\"\<RequestMethod\>\"", "\[Rule]", "\"\<POST\>\""}], ",", 
+      RowBox[{"\"\<RequestParameters\>\"", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<mode\>\"", "\[Rule]", "\"\<getPictureList\>\""}], ",", 
+         RowBox[{"\"\<id\>\"", "\[Rule]", "\"\<2635\>\""}], ",", " ", 
+         RowBox[{"\"\<pictable\>\"", " ", "\[Rule]", " ", "\"\<2\>\""}], ",", 
+         " ", 
+         RowBox[{"\"\<displaysec\>\"", " ", "\[Rule]", " ", "\"\<false\>\""}],
+          ",", " ", 
+         RowBox[{
+         "\"\<searchdate\>\"", " ", "\[Rule]", " ", "\"\<20161127\>\""}]}], 
+        "}"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<json/20161127.json\>\""}], ",", " ", "timetoimage"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.6892549981700087`*^9, 3.68925500234415*^9}, 
+   3.689255523067278*^9, 3.689255594875499*^9, {3.689255662083228*^9, 
+   3.689255744026524*^9}}],
+
+Cell[BoxData["\<\"/Users/George/Desktop/ClockParseData/json/20161127.json\"\>\
+"], "Output",
+ CellChangeTimes->{{3.689255709039524*^9, 3.689255745366376*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "baseImageUrl", " ", "=", " ", 
+    "\"\<https://www.webcam-4insiders.com/pictures/original/\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"imgUrl", " ", "=", " ", 
+     RowBox[{"baseImageUrl", "<>", 
+      RowBox[{"Last", "[", 
+       RowBox[{"timetoimage", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"img", " ", "=", " ", 
+     RowBox[{"Import", "[", "imgUrl", "]"}]}], ";", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Export", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<img/\>\"", "<>", 
+       RowBox[{"Last", "[", 
+        RowBox[{"timetoimage", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "]"}]}], ",", " ", "img"}], "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", " ", "1", ",", " ", 
+     RowBox[{"Length", "[", "timetoimage", "]"}], ",", " ", "1"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.6892550110658216`*^9, 3.689255155657168*^9}, {
+  3.68925518823488*^9, 3.6892551906099987`*^9}, {3.6892552767469378`*^9, 
+  3.6892552892974567`*^9}, {3.6892553515338573`*^9, 3.689255400257382*^9}, {
+  3.689255458087564*^9, 3.689255470475822*^9}}]
+},
+WindowSize->{808, 855},
+WindowMargins->{{459, Automatic}, {-27, Automatic}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1183, 28, 97, "Input"],
+Cell[1766, 52, 158, 2, 28, "Output"]
+}, Open  ]],
+Cell[1939, 57, 1471, 34, 216, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
